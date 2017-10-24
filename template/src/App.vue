@@ -1,24 +1,25 @@
 <template>
   <div id="app">
     {{#router}}
-    <router-view/>
+    <router-view />
     {{else}}
-    <Home/>
+    <Home />
     {{/router}}
   </div>
 </template>
 
 <script>
 {{#unless router}}
-import Home from './pages/Home'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Home from './pages/Home'
 
 {{/unless}}
 export default {
-  name: 'app'{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
+  name: 'app'{{#router}}{{else}},
+
   components: {
-    Home{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    Home
+  }{{/router}}
+}
 </script>
 
 <style lang="scss">
