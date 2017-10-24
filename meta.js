@@ -42,11 +42,21 @@ module.exports = {
     },
     "router": {
       "type": "confirm",
-      "message": "Install vue-router?"
+      "message": "Install vue-router for routing capabilities?"
     },
     "store": {
       "type": "confirm",
-      "message": "Install vuex?"
+      "message": "Install vuex for managing state?"
+    },
+    "axios": {
+      "type": "confirm",
+      "message": "Install axios for doing ajax requests to APIs"
+    },
+    "axios_baseURL": {
+      "when": "axios",
+      "type": "input",
+      "message": "Enter the base url for the api",
+      "default": "/api/"
     },
     "unit": {
       "type": "confirm",

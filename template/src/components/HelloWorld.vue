@@ -2,17 +2,12 @@
 <div class="container">
   <img src="../assets/logo.png">
   <p>\{{ msg }}</p>
-{{#if_or router store}}
   <h2>Current setup</h2>
   <ul>
-{{#router}}
-    <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-{{/router}}
-{{#store}}
-    <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-{{/store}}
+    <li v-for="(entry, index) in installed" :key="index">
+      <a :href="entry.link">\{{ entry.name }}</a>
+    </li>
   </ul>
-{{/if_or}}
   <h2>Essential Links</h2>
   <ul>
     <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -34,19 +29,32 @@
 
 <script>
 export default {
-  {{#unless store}}
   data () {
     return {
-      msg: 'Hello, World!'
+      installed: [
+        {{#router}}
+        { name: 'vue-router', link: 'http://router.vuejs.org/' },
+        {{/router}}
+        {{#store}}
+        { name: 'vuex', link: 'http://vuex.vuejs.org/' },
+        {{/store}}
+        {{#axios}}
+        { name: 'axios', link: 'https://github.com/axios/axios' },
+        {{/axios}}
+        { name: 'vue', link: 'https://vuejs.org/' }
+      ]
     }
-  }
-  {{else}}
+  },
+
   computed: {
     msg () {
+      {{#store}}
       return this.$store.getters.helloWorld
+      {{else}}
+      return 'Hello, World!'
+      {{/store}}
     }
   }
-  {{/unless}}
 }
 </script>
 

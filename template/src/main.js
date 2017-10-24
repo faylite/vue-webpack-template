@@ -3,21 +3,41 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 {{/if_eq}}
 import Vue from 'vue'
+{{#store}}
+import Vuex from 'vuex'
+{{/store}}
+{{#axios}}
+import Axios from 'axios'
+{{/axios}}
+
 import App from '@/App'
 {{#router}}
 import router from '@/router'
 {{/router}}
 {{#store}}
+import store from '@/store'
+{{/store}}
 
+{{#store}}
 /**
  * Vuex
  */
-import Vuex from 'vuex'
-import store from '@/store'
 Vue.use(Vuex)
 Vue.store = store
-
 {{/store}}
+{{#axios}}
+
+/**
+ * Axios HTTP
+ */
+const http = Axios.create({
+  baseURL: '{{ axios_baseURL }}',
+  timeout: 1500
+})
+Vue.prototype.$http = http
+Vue.http = http
+{{/axios}}
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

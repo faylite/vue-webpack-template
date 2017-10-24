@@ -14,13 +14,16 @@
     "test": "{{#unit}}npm run unit{{/unit}}{{#unit}}{{#e2e}} && {{/e2e}}{{/unit}}{{#e2e}}npm run e2e{{/e2e}}"{{/if_or}}
   },
   "dependencies": {
-    "vue": "^2.5.2"{{#if_or router store}},{{/if_or}}
+    {{#axios}}
+    "axios": "^0.17.0",
+    {{/axios}}
     {{#router}}
-    "vue-router": "^3.0.1"{{#store}},{{/store}}
+    "vue-router": "^3.0.1",
     {{/router}}
     {{#store}}
-    "vuex": "^3.0.0"
+    "vuex": "^3.0.0",
     {{/store}}
+    "vue": "^2.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
