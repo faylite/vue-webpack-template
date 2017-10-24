@@ -1,24 +1,13 @@
 <template>
-<div class="container">
-  <h1>Hello, World</h1>
-</div>
+  <hello-world />
 </template>
 
 <script>
+import HelloWorld from '@/components/HelloWorld'
+
 export default {
-
-}
-</script>
-
-<style lang="scss" scoped>
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 5em;
+  components: {
+    HelloWorld
   }
 }
-</style>
+</script>

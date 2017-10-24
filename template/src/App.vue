@@ -3,24 +3,21 @@
     {{#router}}
     <router-view />
     {{else}}
-    <Home />
+    <hello-world />
     {{/router}}
   </div>
 </template>
 
 <script>
 {{#unless router}}
-import Home from './pages/Home'
+import HelloWorld from '@/components/HelloWorld'
 
 {{/unless}}
 export default {
   name: 'app'{{#router}}{{else}},
 
   components: {
-    Home
+    HelloWorld
   }{{/router}}
 }
 </script>
-
-<style lang="scss">
-</style>
