@@ -1,5 +1,5 @@
 const state = {
-  helloWorld: 'Hello, World!'
+  helloWorld: 'Welcome to Your Vue.js App'
 }
 
 const getters = {

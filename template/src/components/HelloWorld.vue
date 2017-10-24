@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <img src="../assets/logo.png">
-  <p>\{{ msg }}</p>
+  <p class="hello">\{{ msg }}</p>
   <h2>Current setup</h2>
   <ul>
     <li v-for="(entry, index) in installed" :key="index">
@@ -51,7 +51,7 @@ export default {
       {{#store}}
       return this.$store.getters.helloWorld
       {{else}}
-      return 'Hello, World!'
+      return 'Welcome to Your Vue.js App'
       {{/store}}
     }
   }
