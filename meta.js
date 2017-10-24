@@ -44,6 +44,10 @@ module.exports = {
       "type": "confirm",
       "message": "Install vue-router?"
     },
+    "store": {
+      "type": "confirm",
+      "message": "Install vuex?"
+    },
     "unit": {
       "type": "confirm",
       "message": "Setup unit tests with Karma + Mocha?"
@@ -59,8 +63,9 @@ module.exports = {
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
     "src/router/**/*": "router",
-    "src/pages/**/*": "router"
+    "src/pages/**/*": "router",
+    "src/store/**/*": "store"
   },
-  "skipInterpolation": "src/components/HelloWorld.vue",
+  // "skipInterpolation": "glob pattern",
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
