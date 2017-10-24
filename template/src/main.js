@@ -17,8 +17,8 @@ import router from '@/router'
 {{#store}}
 import store from '@/store'
 {{/store}}
-
 {{#store}}
+
 /**
  * Vuex
  */
