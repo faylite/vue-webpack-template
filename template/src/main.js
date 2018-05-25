@@ -14,6 +14,7 @@ import router from '@/router'
 {{#store}}
 import store from '@/store'
 {{/store}}
+import * as Components from '@/components'
 {{#axios}}
 
 /**
@@ -35,6 +36,15 @@ Vue.config.productionTip = false
 {{#store}}
 Vue.store = store
 {{/store}}
+
+/**
+ * Register global components added in the component registery
+ *
+ * @see {@link ./components/index.js} for component names
+ */
+for (let name of Object.keys(Components)) {
+  Vue.component(name, Components[name])
+}
 
 /* eslint-disable no-new */
 new Vue({
