@@ -15,6 +15,7 @@ import Router from '@/router'
 import Store from '@/store'
 {{/store}}
 import * as Components from '@/components'
+import * as Filters from '@/filters'
 {{#axios}}
 
 /**
@@ -35,12 +36,21 @@ window.Vue = Vue
 Vue.config.productionTip = false
 
 /**
- * Register global components added in the component registery
+ * Register global components added in the component registry
  *
- * @see {@link ./components/index.js} for component names
+ * @see {@link ./components/index.js} for component names available
  */
 for (let name of Object.keys(Components)) {
   Vue.component(name, Components[name])
+}
+
+/**
+ * Register global filters added in the filter registry
+ *
+ * @see {@link ./filters/index.js} for filter names available
+ */
+for (let name of Object.keys(Filters)) {
+  Vue.filter(name, Filters[filter])
 }
 
 /* eslint-disable no-new */
