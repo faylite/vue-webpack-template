@@ -1,31 +1,18 @@
-const state = {
-  helloWorld: 'Welcome to Your Vue.js App'
-}
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-const getters = {
-  helloWorld: state.helloWorld
-}
+/**
+ * Modules imports
+ */
+import HelloWorld from './modules/helloWorld'
 
-const actions = {
-  setHelloMessage ({ commit }, message) {
-    commit('setHelloMessage', message)
-  }
-}
-
-const mutations = {
-  setHelloMessage (state, payload) {
-    state.helloWorld = payload
-  }
-}
+Vue.use(Vuex)
 
 export default {
   modules: {
-    // Add modules here
+    HelloWorld
   },
-  state,
-  getters,
-  actions,
-  mutations,
+
   // Use strict mode in development to show errors when
   // state getters have been manipulated from outside the mutations
   strict: process.env.NODE_ENV === 'development'

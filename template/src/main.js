@@ -3,9 +3,6 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 {{/if_eq}}
 import Vue from 'vue'
-{{#store}}
-import Vuex from 'vuex'
-{{/store}}
 {{#axios}}
 import Axios from 'axios'
 {{/axios}}
@@ -16,14 +13,6 @@ import router from '@/router'
 {{/router}}
 {{#store}}
 import store from '@/store'
-{{/store}}
-{{#store}}
-
-/**
- * Vuex
- */
-Vue.use(Vuex)
-Vue.store = store
 {{/store}}
 {{#axios}}
 
@@ -38,7 +27,14 @@ Vue.prototype.$http = http
 Vue.http = http
 {{/axios}}
 
+/**
+ * Vue config
+ */
+window.Vue = Vue
 Vue.config.productionTip = false
+{{#store}}
+Vue.store = store
+{{/store}}
 
 /* eslint-disable no-new */
 new Vue({
