@@ -9,10 +9,10 @@ import Axios from 'axios'
 
 import App from '@/App'
 {{#router}}
-import router from '@/router'
+import Router from '@/router'
 {{/router}}
 {{#store}}
-import store from '@/store'
+import Store from '@/store'
 {{/store}}
 import * as Components from '@/components'
 {{#axios}}
@@ -33,9 +33,6 @@ Vue.http = http
  */
 window.Vue = Vue
 Vue.config.productionTip = false
-{{#store}}
-Vue.store = store
-{{/store}}
 
 /**
  * Register global components added in the component registery
@@ -50,10 +47,10 @@ for (let name of Object.keys(Components)) {
 new Vue({
   el: '#app',
   {{#router}}
-  router,
+  router: Router,
   {{/router}}
   {{#store}}
-  store,
+  store: Store,
   {{/store}}
   {{#if_eq build "runtime"}}
   render: h => h(App)
