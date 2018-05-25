@@ -64,8 +64,7 @@ module.exports = {
     "test/unit/**/*": "unit",
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
-    "src/filters/*(exampleFilter|index)*": "!filters",
-    "src/filters/*(text|number|index)*": "filters",
+    "src/filters/!(index|example).js": "filters",
     "src/router/**/*": "router",
     "src/pages/**/*": "router",
     "src/store/**/*": "store"
