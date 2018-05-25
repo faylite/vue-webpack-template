@@ -6,17 +6,29 @@ const state = {
 }
 
 const getters = {
-  helloWorld: state.helloWorld
+  message: state => state.helloWorld
 }
 
 const actions = {
-  setHelloMessage ({ commit }, message) {
-    commit('setHelloMessage', message)
+  setMessage ({ commit }, message) {
+    commit('setMessage', message)
   }
 }
 
 const mutations = {
-  setHelloMessage (state, payload) {
+  setMessage (state, payload) {
     state.helloWorld = payload
   }
+}
+
+export default {
+  /**
+   * Change this to true if you want to namespace the module
+   * In this example the namespace will become 'helloWorld'
+   */
+  namespaced: false,
+  state,
+  getters,
+  actions,
+  mutations
 }

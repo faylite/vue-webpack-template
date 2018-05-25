@@ -49,7 +49,7 @@ export default {
   computed: {
     msg () {
       {{#store}}
-      return this.$store.getters.helloWorld
+      return this.$store.getters.message
       {{else}}
       return 'Welcome to Your Vue.js App'
       {{/store}}

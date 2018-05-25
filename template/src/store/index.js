@@ -1,19 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
-/**
- * Modules imports
- */
-import HelloWorld from './modules/helloWorld'
+import * as Modules from '@/store/modules'
 
 Vue.use(Vuex)
 
-export default {
-  modules: {
-    HelloWorld
-  },
+export default new Vuex.store({
+  /**
+   * Add all modules provided by the module registry
+   *
+   * @see {@link ./modules/index.js}
+   */
+  modules: Modules,
 
   // Use strict mode in development to show errors when
   // state getters have been manipulated from outside the mutations
   strict: process.env.NODE_ENV === 'development'
-}
+})
