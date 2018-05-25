@@ -38,7 +38,7 @@ module.exports = {
     },
     "axios": {
       "type": "confirm",
-      "message": "Install axios for doing ajax requests to APIs"
+      "message": "Install axios for doing ajax requests to APIs?"
     },
     "axios_baseURL": {
       "when": "axios",
