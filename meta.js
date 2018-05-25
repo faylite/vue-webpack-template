@@ -24,6 +24,10 @@ module.exports = {
       "type": "string",
       "message": "Author"
     },
+    "eventhub": {
+      "type": "confirm",
+      "message": "Add a global eventhub for global events that any component can listen to?"
+    },
     "router": {
       "type": "confirm",
       "message": "Install vue-router for routing capabilities?"

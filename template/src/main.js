@@ -32,6 +32,24 @@ Vue.http = http
  */
 window.Vue = Vue
 Vue.config.productionTip = false
+{{#eventhub}}
+
+/**
+ * Eventhub for passing global events into it's own scope so all components can listen for the events.
+ * Note that it's REALLY important to reference function instead of using arrow functions,
+ * when you do $off('event-name') ALL LISTENERS WILL BE TURNED OFF GLOBALLY FOR THAT EVENT,
+ * potentially removing other listeners for other components.
+ * If you do $off('event-name', functionReference) only the explicit listener will be removed from the listeners.
+ *
+ * Example usage in components:
+ * $eventHub.$emit('event-name', payload)
+ * $eventHub.$on('event-name', functionReference)
+ * $eventHub.$off('event-name', functionReference)
+ */
+const EventHub = new Vue()
+Vue.eventHub = EventHub
+Vue.prototype.$eventHub = EventHub
+{{/eventhub}}
 
 /**
  * Register global components added in the component registry
