@@ -28,6 +28,10 @@ module.exports = {
       "type": "confirm",
       "message": "Add a global eventhub for global events that any component can listen to?"
     },
+    "filters": {
+      "type": "confirm",
+      "message": "Do you want to include boilerplate for commonly used filters?"
+    },
     "router": {
       "type": "confirm",
       "message": "Install vue-router for routing capabilities?"
@@ -60,10 +64,12 @@ module.exports = {
     "test/unit/**/*": "unit",
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
+    "src/filters/*(exampleFilter|index)*": "!filters",
+    "src/filters/*(text|number|index)*": "filters",
     "src/router/**/*": "router",
     "src/pages/**/*": "router",
     "src/store/**/*": "store"
   },
   // "skipInterpolation": "glob pattern",
-  "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
+  "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack and https://github.com/faylite/vue-webpack-template"
 };
