@@ -10,7 +10,7 @@ export function capitalize (value, allWords = false, delimiter = ' ') {
   value = '' + value.toString()
 
   if (allWords) {
-    let delimiter = delimiter || ' '
+    delimiter = delimiter || ' '
     return value
       .split(delimiter)
       .map(x => x.charAt(0).toUpperCase() + x.slice(1))

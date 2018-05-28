@@ -4,7 +4,7 @@ import * as Modules from '@/store/modules'
 
 Vue.use(Vuex)
 
-export default new Vuex.store({
+export default new Vuex.Store({
   /**
    * Add all modules provided by the module registry
    *

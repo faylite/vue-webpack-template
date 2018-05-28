@@ -25,7 +25,7 @@ export function floor (number) {
  * @param {Number} number - Number to transform
  * @param {Number} decimalPoints - (optional) Specify how many decimal points to use
  */
-export function fixed(number, decimalPoints = 2) {
+export function fixed (number, decimalPoints = 2) {
   if (!number || !parseFloat(number)) return number
   return parseFloat(number).toFixed(decimalPoints)
 }
