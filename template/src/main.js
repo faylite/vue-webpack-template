@@ -66,7 +66,7 @@ for (let name of Object.keys(Components)) {
  * @see {@link ./filters/index.js} for filter names available
  */
 for (let name of Object.keys(Filters)) {
-  Vue.filter(name, Filters[filter])
+  Vue.filter(name, Filters[name])
 }
 
 /* eslint-disable no-new */
