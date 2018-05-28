@@ -3,30 +3,30 @@
  * by referring to the export key name defined here.
  *
  * Recommended export methods:
- * export { methodName as your_filter_name } from './yourCode'
- * export { default as your_filter_name } from './yourCode'
+ * export { methodName as yourFilterName } from './yourCode'
+ * export { default as yourFilterName } from './yourCode'
  *
- * i.e you can use 'your_filter_name' as usual to call on the filter in your vue html markup,
- * or alternatively from javascript code `$options.filters.your_filter_name(value, args...)`
+ * i.e you can use 'yourFilterName' as usual to call on the filter in your vue html markup,
+ * or alternatively from javascript code `$options.filters.yourFilterName(value, args...)`
  */
 
 /**
  * Example filter
  */
-export { filterMethod as example_filter } from './example'
+export { filterMethod as exampleFilter } from './example'
 {{#filters}}
 
 /**
  * Text formatters
  */
-export { capitalize as text_capitalize } from './capitalize'
-export { uppercase as text_uppercase } from './uppercase'
-export { lowercase as text_lowercase } from './lowercase'
+export { capitalize as textCapitalize } from './text'
+export { uppercase as textUppercase } from './text'
+export { lowercase as textLowercase } from './text'
 
 /**
  * Number formatters
  */
-export { round as number_round } from './number'
-export { floor as number_floor } from './number'
-export { fixed as number_fixed } from './number'
+export { round as numberRound } from './number'
+export { floor as numberFloor } from './number'
+export { fixed as numberFixed } from './number'
 {{/filters}}
